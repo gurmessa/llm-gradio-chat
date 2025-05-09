@@ -18,9 +18,6 @@ Four implementations of Gradio chat interfaces with streaming and standard versi
 - `openrouter_gradio_chat.py`: Standard implementation
 - `openrouter_gradio_chat_streaming.py`: Streaming response support
 
-## Screenshot
-![Chat Interface Demo](screenshot.png)
-
 ## Requirements
 - Python 3.8+
 - Ollama installed and running (for local versions)
@@ -57,7 +54,7 @@ All applications start a local server at http://localhost:7860
 ## Configuration
 1. OpenRouter: Set `OPENROUTER_API_KEY` in `.env`
 2. Ollama: Edit respective files to:
-   - Change default model (default: llama2)
+   - Change default model (default: llama3.2)
    - Adjust temperature
    - Modify UI layout
 3. OpenRouter: Edit respective files to:
