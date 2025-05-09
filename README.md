@@ -51,6 +51,15 @@ python openrouter_gradio_chat_streaming.py
 
 All applications start a local server at http://localhost:7860
 
+
+**OpenRouter Setup:**
+1. Create API key: [OpenRouter Keys](https://openrouter.ai/settings/keys)
+2. Choose a model: [OpenRouter Models](https://openrouter.ai/models)
+
+**Ollama Setup:**
+Ollama Installation[Installation](https://github.com/ollama/ollama)
+
+
 ## Configuration
 1. OpenRouter: Set `OPENROUTER_API_KEY` in `.env`
 2. Ollama: Edit respective files to:
