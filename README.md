@@ -1,25 +1,27 @@
 # AI Chat Interfaces
 
-Dual implementation of chat interfaces using both Ollama (local AI) and OpenRouter (cloud AI) with Gradio UI.
+Four implementations of Gradio chat interfaces with streaming and standard versions for both Ollama (local AI) and OpenRouter (cloud AI).
 
 ## Features
 
-**Ollama Version:**
+**Ollama Implementations:**
 - Local AI chat using Ollama
-- Streaming response support
 - Markdown rendering
 - Conversation history
+- `ollama_gradio_chat.py`: Basic implementation
+- `ollama_gradio_chat_with_streaming.py`: Real-time streaming support
 
-**OpenRouter Version:**
+**OpenRouter Implementations:**
 - Cloud-based AI models via OpenRouter
 - API key configuration
 - Multiple model support
-- Response customization
+- `openrouter_gradio_chat.py`: Standard implementation
+- `openrouter_gradio_chat_streaming.py`: Streaming response support
 
 ## Requirements
 - Python 3.8+
-- Ollama installed and running (for local version)
-- OpenRouter API key (for cloud version)
+- Ollama installed and running (for local versions)
+- OpenRouter API key (for cloud versions)
 
 ## Installation
 ```bash
@@ -31,23 +33,31 @@ cp .env.example .env  # For OpenRouter configuration
 
 **Ollama Chat:**
 ```bash
+# Standard version
+python ollama_gradio_chat.py
+
+# Streaming version
 python ollama_gradio_chat_with_streaming.py
 ```
 
 **OpenRouter Chat:**
 ```bash
+# Standard version
 python openrouter_gradio_chat.py
+
+# Streaming version 
+python openrouter_gradio_chat_streaming.py
 ```
 
-Both applications start a local server at http://localhost:7860
+All applications start a local server at http://localhost:7860
 
 ## Configuration
 1. OpenRouter: Set `OPENROUTER_API_KEY` in `.env`
-2. Ollama: Edit `ollama_gradio_chat_with_streaming.py` to:
+2. Ollama: Edit respective files to:
    - Change default model (default: llama2)
    - Adjust temperature
    - Modify UI layout
-3. OpenRouter: Edit `openrouter_gradio_chat.py` to:
+3. OpenRouter: Edit respective files to:
    - Select different models
    - Adjust response length
    - Modify system prompts
@@ -56,4 +66,4 @@ Both applications start a local server at http://localhost:7860
 - gradio
 - ollama
 - markdown
-- python-dotenv (for OpenRouter version)
+- python-dotenv (for OpenRouter versions)

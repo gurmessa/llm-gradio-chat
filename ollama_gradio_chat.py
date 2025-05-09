@@ -4,22 +4,20 @@ import ollama
 OLLAMA_MODEL = "llama3.2:latest" 
 
 def chat_with_ollama(message, history):
-    messages = history
+    messages = []
+
+    # Add previous conversation history
+    for human, assistant in history:
+        messages.append({"role": "user", "content": human})
+        messages.append({"role": "assistant", "content": assistant})
 
     # Add the current user message
     messages.append({"role": "user", "content": message})
 
     try:
-        response = ollama.chat(model=OLLAMA_MODEL, messages=messages, stream=True)
-        
-        # Stream the response
-        full_response = ""
-        for chunk in response:
-            if 'message' in chunk and 'content' in chunk['message']:
-                content = chunk['message']['content']
-                full_response += content
-                yield full_response # Yield the accumulating response for streaming
-                
+        response = ollama.chat(model=OLLAMA_MODEL, messages=messages)
+        return response['message']['content']
+
     except Exception as e:
         return f"Error: {e}"
 

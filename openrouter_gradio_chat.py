@@ -17,12 +17,7 @@ client = OpenAI(
 OPENROUTER_MODEL = "qwen/qwen3-32b:free" 
 
 def chat_with_openrouter(message, history):
-    messages = []
-
-    # Add previous conversation history
-    for human, assistant in history:
-        messages.append({"role": "user", "content": human})
-        messages.append({"role": "assistant", "content": assistant})
+    messages = history
 
     # Add the current user message
     messages.append({"role": "user", "content": message})
