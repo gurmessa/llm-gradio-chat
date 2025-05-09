@@ -18,6 +18,9 @@ Four implementations of Gradio chat interfaces with streaming and standard versi
 - `openrouter_gradio_chat.py`: Standard implementation
 - `openrouter_gradio_chat_streaming.py`: Streaming response support
 
+## Screenshot
+![Chat Interface Demo](screenshot.png)
+
 ## Requirements
 - Python 3.8+
 - Ollama installed and running (for local versions)
