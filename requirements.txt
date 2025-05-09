@@ -1,0 +1,3 @@
+ollama==0.4.7
+gradio==5.22.0
+python-dotenv
