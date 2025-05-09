@@ -4,7 +4,12 @@ import ollama
 OLLAMA_MODEL = "llama3.2:latest" 
 
 def chat_with_ollama(message, history):
-    messages = history
+    messages = []
+
+    # Add previous conversation history
+    for human, assistant in history:
+        messages.append({"role": "user", "content": human})
+        messages.append({"role": "assistant", "content": assistant})
 
     # Add the current user message
     messages.append({"role": "user", "content": message})
